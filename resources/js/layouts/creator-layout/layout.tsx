@@ -2,6 +2,7 @@ import React from 'react';
 import DefaultLayout from '../default-layout';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import AppSidebar from './app-sidebar';
+import NavHeader from './nav-header';
 
 export default function CreatorLayout({
     children,
@@ -13,8 +14,8 @@ export default function CreatorLayout({
             <DefaultLayout>
                 <SidebarProvider>
                     <AppSidebar/>
-                    <main>
-                        <SidebarTrigger/>
+                    <main className='w-full'>
+                        <NavHeader/>
                         {children}
                     </main>
                 </SidebarProvider>

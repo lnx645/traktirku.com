@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import {
     Sidebar,
     SidebarContent,
+    SidebarFooter,
     SidebarGroup,
     SidebarGroupContent,
     SidebarHeader,
@@ -10,15 +11,16 @@ import {
     SidebarMenuItem,
     SidebarMenuSubButton,
 } from '@/components/ui/sidebar';
-import { ChatIcon } from '@/icons/ChatIcon';
-import { GoogleIcon } from '@/icons/GoogleIcon';
-import { NotifIcon } from '@/icons/NotifIcon';
-import { UserIcon } from '@hugeicons/core-free-icons';
+import MainMenuNav from './main-menu-nav';
+import { Separator } from '@/components/ui/separator';
+import IntegrationMenuNav from './integrations-menu-nav';
+import SuporterMenu from './supporter-menu';
+import { NavUser } from './user-menu';
 
 export default function AppSidebar() {
     return (
         <Sidebar collapsible="offcanvas">
-            <SidebarHeader>
+            <SidebarHeader className="flex h-11.5 justify-center border-b border-sidebar-border">
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton>
@@ -31,23 +33,19 @@ export default function AppSidebar() {
                     </SidebarMenuItem>
                 </SidebarMenu>
             </SidebarHeader>
-            <SidebarContent>
-                <SidebarGroup>
-                    <SidebarGroupContent className='flex flex-col gap-2'>
-                        <SidebarMenu>
-                            <SidebarMenuItem className='flex items-center gap-4'>
-                                <SidebarMenuButton className='bg-primary text-primary-foreground  hover:bg-primary/90 active:bg-primary/90 active:text-primary-foreground hover:text-primary-foreground'>
-                                    <NotifIcon/>
-                                    <span>Edit Profile</span>
-                                </SidebarMenuButton>
-                                <Button variant={"outline"} size={"icon"}>
-                                    <ChatIcon/>
-                                </Button>
-                            </SidebarMenuItem>
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup>
+            <SidebarContent className="py-3">
+                <MainMenuNav />
+                <IntegrationMenuNav/>
+                <SuporterMenu/>
+
             </SidebarContent>
+            <SidebarFooter>
+                <NavUser user={{
+                    name:"DADA",
+                    email : "dadan@gmail.com",
+                    avatar : ""
+                }}/>
+            </SidebarFooter>
         </Sidebar>
     );
 }
