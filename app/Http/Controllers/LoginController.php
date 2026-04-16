@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Creator;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     public function __invoke(Request $request)
     {
-        return inertia("creator/login");
+        return inertia("auth/login");
     }
     public function checkLogin(Request $request)
     {
@@ -21,7 +21,7 @@ class LoginController extends Controller
         ]);
 
         if ($login = Auth::guard("web")->attempt($validated)) {
-            return "/";
+            return to_route("creatorDashboardView");
         } else {
             throw ValidationException::withMessages(['email' => "Akun tidak ditemukan!"]);
         }

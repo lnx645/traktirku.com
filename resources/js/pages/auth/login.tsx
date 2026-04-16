@@ -1,16 +1,13 @@
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import React, { useEffect, useState } from 'react';
-import { GoogleIcon } from '@/icons/GoogleIcon';
 import SocialLogin from '@/features/auth/social-login';
 import {
     InputGroup,
     InputGroupAddon,
     InputGroupButton,
     InputGroupInput,
-    InputGroupText,
 } from '@/components/ui/input-group';
-import { Field, FieldLabel } from '@/components/ui/field';
+import { Field } from '@/components/ui/field';
 import { TablerEye } from '@/icons/EyeIcon';
 import { MageEmail } from '@/icons/EmailIcon';
 import { MageLock } from '@/icons/LockIcon';
@@ -42,15 +39,10 @@ export default function LoginCreator() {
     function loginAction(event: React.SubmitEvent<HTMLFormElement>) {
         event.preventDefault();
         try {
-            form.submit(
-                loginCreatorAction({
-                    role: 'creator',
-                }),
-                {
-                    onFinish() {},
-                    onError() {},
-                },
-            );
+            form.submit(loginCreatorAction(), {
+                onFinish() {},
+                onError() {},
+            });
         } catch (error) {}
     }
 
