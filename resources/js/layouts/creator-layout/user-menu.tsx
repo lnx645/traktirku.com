@@ -43,18 +43,18 @@ export function NavUser({
       <Separator/>
         <SidebarMenu>
             <SidebarMenuItem>
-                <SidebarMenuSubButton>
+                <SidebarMenuButton tooltip='Pengaturan'>
                     <CogIcon />
-                    <span>Penngaturan</span>
-                </SidebarMenuSubButton>
-                <SidebarMenuSubButton>
+                    <span>Pengaturan</span>
+                </SidebarMenuButton>
+                <SidebarMenuButton tooltip={"Bantuan"}>
                     <HelpCircle />
                     <span>Dapatkan Bantuan</span>
-                </SidebarMenuSubButton>
-                <SidebarMenuSubButton>
+                </SidebarMenuButton>
+                <SidebarMenuButton tooltip={"Feeds"}>
                     <UsersIcon />
                     <span>Feeds</span>
-                </SidebarMenuSubButton>
+                </SidebarMenuButton>
             </SidebarMenuItem>
         </SidebarMenu>
       </>

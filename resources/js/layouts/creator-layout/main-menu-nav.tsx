@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import {
     SidebarGroup,
     SidebarGroupContent,
@@ -6,9 +5,8 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { ChatIcon } from '@/icons/ChatIcon';
-import { NotifIcon } from '@/icons/NotifIcon';
-import { Group,  HeartHandshake,  Landmark,  Wallet } from 'lucide-react';
+import { IconEditCircle } from '@tabler/icons-react';
+import { Landmark, Wallet } from 'lucide-react';
 
 export default function MainMenuNav() {
     return (
@@ -16,14 +14,11 @@ export default function MainMenuNav() {
             <SidebarGroup>
                 <SidebarGroupContent className="flex flex-col gap-2">
                     <SidebarMenu>
-                        <SidebarMenuItem className="flex items-center gap-4">
-                            <SidebarMenuButton className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground">
-                                <NotifIcon />
+                        <SidebarMenuItem>
+                            <SidebarMenuButton>
+                                <IconEditCircle />
                                 <span>Edit Profile</span>
                             </SidebarMenuButton>
-                            <Button variant={'outline'} size={'icon'}>
-                                <ChatIcon />
-                            </Button>
                         </SidebarMenuItem>
                     </SidebarMenu>
                     <SidebarMenu>

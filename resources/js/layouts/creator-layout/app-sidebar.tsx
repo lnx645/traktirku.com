@@ -19,7 +19,7 @@ import { NavUser } from './user-menu';
 
 export default function AppSidebar() {
     return (
-        <Sidebar collapsible="offcanvas">
+        <Sidebar collapsible="icon">
             <SidebarHeader className="flex h-11.5 justify-center border-b border-sidebar-border">
                 <SidebarMenu>
                     <SidebarMenuItem>
