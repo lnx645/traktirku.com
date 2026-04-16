@@ -42,10 +42,15 @@ export default function LoginCreator() {
     function loginAction(event: React.SubmitEvent<HTMLFormElement>) {
         event.preventDefault();
         try {
-            form.submit(loginCreatorAction(), {
-                onFinish() {},
-                onError() {},
-            });
+            form.submit(
+                loginCreatorAction({
+                    role: 'creator',
+                }),
+                {
+                    onFinish() {},
+                    onError() {},
+                },
+            );
         } catch (error) {}
     }
 
