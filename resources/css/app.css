@@ -150,7 +150,7 @@
 
 @theme inline {
     --font-sans:
-        'Inter Variable', sans-serif;
+        'Nunito Variable', sans-serif;
     --font-heading:
         var(--font-sans);
     --color-sidebar-ring:

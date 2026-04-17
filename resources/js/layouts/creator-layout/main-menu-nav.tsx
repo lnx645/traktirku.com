@@ -1,3 +1,4 @@
+import EditProfileController from '@/actions/App/Http/Controllers/Creator/Manage/EditProfileController';
 import {
     SidebarGroup,
     SidebarGroupContent,
@@ -5,6 +6,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
+import { Link } from '@inertiajs/react';
 import { IconEditCircle } from '@tabler/icons-react';
 import { Landmark, Wallet } from 'lucide-react';
 
@@ -15,7 +17,7 @@ export default function MainMenuNav() {
                 <SidebarGroupContent className="flex flex-col gap-2">
                     <SidebarMenu>
                         <SidebarMenuItem>
-                            <SidebarMenuButton>
+                            <SidebarMenuButton >
                                 <IconEditCircle />
                                 <span>Edit Profile</span>
                             </SidebarMenuButton>

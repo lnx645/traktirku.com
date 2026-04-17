@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Creator\SupportPageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/account/login", App\Http\Controllers\LoginController::class)->name("logiView");
@@ -8,3 +9,4 @@ Route::post("/account/login", [App\Http\Controllers\LoginController::class, 'che
 
 include base_path("routes/app.php");
 Route::prefix("creator")->group(base_path("routes/creator.php"));
+Route::get('/{name}',SupportPageController::class)->name("creatorPageView");
